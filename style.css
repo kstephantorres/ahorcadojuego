@@ -1,0 +1,168 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: url('./images/hoja.jpg');
+    background-repeat: repeat;
+    background-size: 150%;
+    padding: 24px 16px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* color: #1c1c1c; */
+}
+button {
+   --button_radius: 0.75em;
+   --button_color: #e8e8e8;
+   /* --button_outline_color: #000000; */
+   --button_outline_color: #474b4e;
+   width: 100%;
+   /* margin-bottom: 15px; */
+   font-family: 'Nanum Pen Script', cursive;
+    font-size: 20px;
+   /* font-size: 17px; */
+   font-weight: bold;
+   border: none;
+   border-radius: var(--button_radius);
+   background: var(--button_outline_color);
+   -webkit-border-radius: var(--button_radius);
+   -moz-border-radius: var(--button_radius);
+   -ms-border-radius: var(--button_radius);
+   -o-border-radius: var(--button_radius);
+}
+.margen-inferiror{
+    margin-bottom: 10px;
+}
+
+.titulo-popup{
+    text-align: center;
+    margin-bottom: 10px;
+}
+.button_top { display: block; box-sizing: border-box; border: 2px solid var(--button_outline_color); border-radius: var(--button_radius); padding: 0.75em 1.5em; background: var(--button_color); color: var(--button_outline_color); transform: translateY(-0.2em); transition: transform 0.1s ease; -webkit-transform: translateY(-0.2em); -moz-transform: translateY(-0.2em); -ms-transform: translateY(-0.2em); -o-transform: translateY(-0.2em);
+}
+
+button:hover .button_top {
+/* Pull the button upwards when hovered */
+transform: translateY(-0.33em);
+}
+
+button:active .button_top {
+/* Push the button downwards when pressed */
+transform: translateY(0);
+}
+
+.oculto{
+    display: none;
+}
+
+.botones{
+    /* margin-bottom: 20px; */
+    text-align: center;
+}
+.palabra{
+    color: #474b4e;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Nanum Pen Script', cursive;
+    font-size: 35px;
+    /* height: 45px; */
+    /* margin-bottom: 10px; */
+}
+.contenedor-letra{
+    width: 45px;
+    height: 45px;
+    border-bottom: 4px solid #000000;
+    text-align: center;
+    margin: 0 2px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+}
+.contenedor-errores{
+    /* height: 45px; */
+    text-align: left;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    color: #474b4e;
+    font-family: 'Nanum Pen Script', cursive;
+    font-size: 35px;
+}
+.contenedor-error{
+    width: 40px;
+    text-align: center;
+    margin: 0 2px;
+    height: 45px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+.muñeco {
+    display: flex;
+    justify-content: center;
+}
+.input-texto{
+    font-family: 'Nanum Pen Script', cursive;
+    width: 100%;
+    height: 50vh;
+    border: none;
+    background-color: transparent;
+    resize: none;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 150%;
+}
+.input-texto:focus{
+    outline:none;
+} 
+.input-texto::placeholder{
+    
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 150%;
+    font-family: 'Nanum Pen Script', cursive;
+}
+.atencion{
+    display: none;
+    font-weight: 400;
+    /* font-size: 12px; */
+    line-height: 150%;
+    margin-bottom: 16px;
+    color: #495057;
+    opacity: 0.8;
+    flex-direction: row;
+    margin-right: 5px;
+    font-family: 'Nanum Pen Script', cursive;
+    
+}
+.contenedor-atencion{
+    display: flex;
+    flex-direction: row;
+    align-items: center
+}
+
+@media screen and (min-width:768px){
+    button{
+        width: 317px;
+    }
+    body{
+        background-size:100% ;
+    }
+}
+/*1440*/
+@media screen and (min-width:1040px){
+    
+    body{
+        background-size:70% ;
+    }
+}

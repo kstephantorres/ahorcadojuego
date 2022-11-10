@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Juego Del Ahorcado</title>
+    <link rel="stylesheet" href="/node_modules/eins-modal/dist/css/eins-modal.min.css">
+</head>
+<body>
+    <header>
+        <a href="#" >
+            <img class="logo" src="./images/logo.svg" alt="Logo alura">
+        </a>
+    </header>
+    <main>
+        <section class="muñeco">
+            <svg class="fondo" width="288" height="351" viewBox="0 0 288 351" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- base -->
+                <rect id="base" class="oculto" x="0.675049" y="346.125" width="286.65" height="4.875" rx="2.4375" fill="#1c1c1c"/>
+                <!-- techo -->
+                <rect id="techo" class="oculto" x="79.3325" width="173.306" height="4.3875" rx="2.19375" fill="#1c1c1c"/>
+                <!-- mastil -->
+                <rect id="mastil" class="oculto"  x="79.3325" width="4.3875" height="351" rx="2.19375" fill="#1c1c1c"/>
+                <!-- soga -->
+                <rect id="soga" class="oculto" x="248.251" width="4.3875" height="48.2625" rx="2.19375" fill="#1c1c1c"/>
+                <!-- cuerpo -->
+                <rect id="cuerpo" class="oculto" x="248.251" y="105.3" width="4.3875" height="131.625" fill="#1c1c1c"/>
+                <!-- pierna izquierda -->
+                <rect id="piernai" class="oculto" x="249.054" y="233.634" width="4.38901" height="70.2" rx="2.19451" transform="rotate(30 249.054 233.634)" fill="#1c1c1c"/>
+                <!-- pierna derecha -->
+                <rect id="piernad" class="oculto" width="4.39126" height="70.2" rx="2.19563" transform="matrix(-0.866025 0.5 0.5 0.866025 251.759 233.634)" fill="#1c1c1c"/>
+                <!-- brazo derecho -->
+                <rect id="brazod" class="oculto" width="4.38666" height="70.2" rx="2.19333" transform="matrix(-0.866025 0.5 0.5 0.866025 251.758 104.203)" fill="#1c1c1c"/>
+                <!-- brazo izquierdo -->
+                <rect id="brazoi" class="oculto" x="249.055" y="104.203" width="4.38691" height="70.2" rx="2.19346" transform="rotate(30 249.055 104.203)" fill="#1c1c1c"/>
+                <!-- cabeza -->
+                <path id="cabeza" class="oculto" fill-rule="evenodd" clip-rule="evenodd" d="M250.445 100.913C264.984 100.913 276.77 89.1264 276.77 74.5875C276.77 60.0486 264.984 48.2625 250.445 48.2625C235.906 48.2625 224.12 60.0486 224.12 74.5875C224.12 89.1264 235.906 100.913 250.445 100.913ZM250.445 105.3C267.407 105.3 281.157 91.5495 281.157 74.5875C281.157 57.6255 267.407 43.875 250.445 43.875C233.483 43.875 219.732 57.6255 219.732 74.5875C219.732 91.5495 233.483 105.3 250.445 105.3Z" fill="#1c1c1c"/>
+                </svg>
+        </section>
+            <section class="palabra oculto">
+
+            </section>
+            <section class="contenedor-errores oculto">
+                <div class="contenedor-error"></div>
+            </section>
+         
+        
+        <section class="oculto contenedor-texto">
+            <textarea class="input-texto" name="" id="input-texto" maxlength="8" cols="40" rows="6" placeholder="Ingrese el texto aquí" onkeypress="return ((event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122))" ></textarea>
+        </section>
+        <section class="contenedor-atencion">
+            <svg class="atencion" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 8C16 10.1217 15.1571 12.1566 13.6569 13.6569C12.1566 15.1571 10.1217 16 8 16C5.87827 16 3.84344 15.1571 2.34315 13.6569C0.842855 12.1566 0 10.1217 0 8C0 5.87827 0.842855 3.84344 2.34315 2.34315C3.84344 0.842855 5.87827 0 8 0C10.1217 0 12.1566 0.842855 13.6569 2.34315C15.1571 3.84344 16 5.87827 16 8V8ZM8 4C7.87361 4.00007 7.74863 4.02662 7.63312 4.07793C7.51761 4.12924 7.41413 4.20418 7.32934 4.29791C7.24456 4.39165 7.18035 4.5021 7.14084 4.62217C7.10134 4.74223 7.08743 4.86923 7.1 4.995L7.45 8.502C7.46176 8.63977 7.5248 8.76811 7.62664 8.86164C7.72849 8.95516 7.86173 9.00705 8 9.00705C8.13827 9.00705 8.27151 8.95516 8.37336 8.86164C8.4752 8.76811 8.53824 8.63977 8.55 8.502L8.9 4.995C8.91257 4.86923 8.89866 4.74223 8.85915 4.62217C8.81965 4.5021 8.75544 4.39165 8.67066 4.29791C8.58587 4.20418 8.48239 4.12924 8.36688 4.07793C8.25137 4.02662 8.12639 4.00007 8 4V4ZM8.002 10C7.73678 10 7.48243 10.1054 7.29489 10.2929C7.10736 10.4804 7.002 10.7348 7.002 11C7.002 11.2652 7.10736 11.5196 7.29489 11.7071C7.48243 11.8946 7.73678 12 8.002 12C8.26722 12 8.52157 11.8946 8.70911 11.7071C8.89664 11.5196 9.002 11.2652 9.002 11C9.002 10.7348 8.89664 10.4804 8.70911 10.2929C8.52157 10.1054 8.26722 10 8.002 10Z" fill="#495057"/>
+            </svg>
+            <p class="atencion">Máx. de 8 letras</p>
+        </section>
+        <section class="botones">
+            <button class="boton-iniciar margen-inferiror" onclick="iniciarJuego()">
+                <span class="button_top"> Iniciar juego </span>
+            </button>
+            <button class="boton-agregar">
+                <span class="button_top" onclick="agregarPalabra()"> Agregar nueva palabra </span>
+            </button>
+        <button class="oculto boton-guardar margen-inferiror">
+                <span class="button_top" onclick="guardar()"> Guardar y empezar </span>
+            </button>
+            <button class="oculto boton-cancelar">
+                <span class="button_top" onclick="cancelar()"> Cancelar </span>
+            </button>
+            <button class="oculto boton-nuevo margen-inferiror">
+                <span class="button_top" onclick="nuevoJuego()"> Nuevo juego </span>
+            </button>
+            <button class="oculto boton-desistir" onclick="desistir()">
+                <span class="button_top"> Desistir </span>
+            </button>
+        </section> 
+    </main>
+    <a id="enlace-modal" data-modal-id="myModal"></a>
+    <div id="myModal" class="eins-modal" data-options="openTransmition: expandIn; openDuration: 200; backdropClose: false;">
+        <div class="eins-modal-content">
+            <div class="eins-modal-close" onclick="nuevoJuego()">
+            </div>
+            <h2 class="titulo-popup"></h2>
+            
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="/node_modules/eins-modal/dist/js/eins-modal-plain.min.js"></script>
+</body>
+</html>
